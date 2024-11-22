@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+locust = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.13"
+
+[scripts]
+load-test-ui = "locust -f src/locustfile.py -u 20 -r 5 --run-time 30m"
+load-test-cl = "locust -f src/locustfile.py --csv=test_report --html=test_report.html --headless -u 20 -r 5 --run-time 1m"
